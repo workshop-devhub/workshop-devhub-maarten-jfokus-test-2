@@ -1,0 +1,53 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: workshop-devhub-maarten-jfokus-test-2-service
+  description: 'The Liberty service for workshop-devhub-maarten-jfokus-test-2 (Creates an Open Liberty getting started app)'
+  annotations:
+    argocd/app-name: workshop-devhub-maarten-jfokus-test-2-dev
+    backstage.io/kubernetes-id: workshop-devhub-maarten-jfokus-test-2
+    backstage.io/kubernetes-namespace: workshop-devhub
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: workshop-devhub/workshop-devhub-maarten-jfokus-test-2
+    janus-idp.io/tekton : workshop-devhub-maarten-jfokus-test-2
+    argocd/app-selector: workshop-devhub-maarten-jfokus-test-2-dev
+    openliberty.io/app-kind: OpenLibertyApplication
+  labels:
+    backstage.io/kubernetes-id: workshop-devhub-maarten-jfokus-test-2
+  tags:
+    - java
+    - liberty
+    - maven
+    - example
+  links:
+    - url: https://console-openshift-console.apps.cluster-ssghb.ssghb.sandbox512.opentlc.com/k8s/ns/workshop-devhub/deployments/workshop-devhub-maarten-jfokus-test-2
+      title: Deployment
+      icon: web
+    - url: https://openliberty.io/docs/latest/overview.html
+      title: Open Liberty Docs
+      icon: web
+spec:
+  type: service
+  lifecycle: production
+  owner: "user:default/maarten-vandeperre"
+  providesApis:
+    - workshop-devhub-maarten-jfokus-test-2-api
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: workshop-devhub-maarten-jfokus-test-2-api
+  description: API surface exposed by the Liberty service
+  links:
+    - url: https://workshop-devhub-maarten-jfokus-test-2-workshop-devhub.apps.cluster-ssghb.ssghb.sandbox512.opentlc.com/q/swagger-ui
+      title: Swagger UI
+      icon: web
+    - url: https://github.com/workshop-devhub/workshop-devhub-maarten-jfokus-test-2/-/blob/main/src/main/resources/META-INF/openapi.yaml
+      title: API Spec
+      icon: code
+spec:
+  type: openapi
+  lifecycle: production
+  owner: "user:default/maarten-vandeperre"
+  definition:
+    $text: ./src/main/resources/META-INF/openapi.yaml

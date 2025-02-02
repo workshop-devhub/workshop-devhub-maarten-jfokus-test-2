@@ -1,0 +1,17 @@
+# -------------------------------------------------
+# DO NOT EDIT THIS
+# doc site and hosting specifics
+site_name: workshop-devhub-maarten-jfokus-test-2-docs
+site_description: Creates an Open Liberty getting started app
+docs_dir: docs
+repo_url: https://github.com/workshop-devhub/workshop-devhub-maarten-jfokus-test-2
+edit_uri: edit/main/docs
+plugins:
+  - techdocs-core
+# -------------------------------------------------
+
+# -------------------------------------------------
+# CONTENT RELATED -> CHANGE AS NEEDED :)
+nav:
+  - Overview: index.md
+# -------------------------------------------------
